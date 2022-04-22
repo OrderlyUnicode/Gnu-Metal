@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
-[ext_resource path="res://res/Sprites/Player/DefaultWeapon.png" type="Texture" id=2]
-[ext_resource path="res://res/Sprites/Player/DefaultWeaponFlash.png" type="Texture" id=3]
+[ext_resource path="res://res/Sprites/Actors/Player/DefaultWeapon.png" type="Texture" id=2]
+[ext_resource path="res://res/Sprites/Actors/Player/DefaultWeaponFlash.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.4
@@ -37,6 +37,13 @@ visible = false
 light_color = Color( 0.835294, 0.627451, 0.337255, 1 )
 light_energy = 4.0
 spot_range = 3.0
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023766, -0.209964, -0.288251 )
+enabled = true
+cast_to = Vector3( 0, 0, -30 )
+collide_with_areas = true
+debug_shape_custom_color = Color( 1, 1, 1, 1 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enable = true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DefaultEnemy.png-6ea52a0027c24251be292624608fb7db.stex"
+path="res://.import/DefaultEnemy.png-3ebac18487c06614b82cd15a6b2d17f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Sprites/Player/DefaultEnemy.png"
-dest_files=[ "res://.import/DefaultEnemy.png-6ea52a0027c24251be292624608fb7db.stex" ]
+source_file="res://res/Sprites/Actors/BaseEnemy/DefaultEnemy.png"
+dest_files=[ "res://.import/DefaultEnemy.png-3ebac18487c06614b82cd15a6b2d17f5.stex" ]
 
 [params]
 

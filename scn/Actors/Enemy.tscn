@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://res/Sprites/Player/DefaultEnemy.png" type="Texture" id=1]
+[ext_resource path="res://res/Sprites/Actors/BaseEnemy/DefaultEnemy.png" type="Texture" id=1]
+[ext_resource path="res://res/Sprites/Items/AR-69.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.4
@@ -11,9 +12,15 @@ radius = 0.4
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Sprite3D" type="Sprite3D" parent="CollisionShape"]
+[node name="CharacterSprite" type="Sprite3D" parent="CollisionShape"]
 pixel_size = 0.03
 axis = 1
 transparent = false
 alpha_cut = 1
 texture = ExtResource( 1 )
+
+[node name="WeaponSprite" type="Sprite3D" parent="CollisionShape/CharacterSprite"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.001, 0.255 )
+pixel_size = 0.03
+axis = 1
+texture = ExtResource( 2 )

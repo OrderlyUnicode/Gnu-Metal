@@ -54,4 +54,4 @@ shadow_color = Color( 0.113725, 0.105882, 0.141176, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73638, 0.906212, 3.5351 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59455, 1.102, -1.90468 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.595, 1, -1.905 )

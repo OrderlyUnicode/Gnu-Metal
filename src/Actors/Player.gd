@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) if inMenu == false else Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if event.is_action_pressed("ui_accept"):
-		$UI/WeaponSprite/MuzzleFlash.visible = true
+		$UI/WeaponSprite/WeaponFlash.visible = true
 		$Camera/MuzzleLight.visible = true
 		yield(get_tree().create_timer(0.1), "timeout")
 		$UI/WeaponSprite/WeaponFlash.visible = false
@@ -26,7 +26,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		self.rotate_y(-event.relative.x * 0.03)
 		$Camera.rotate_x(-event.relative.y * 0.03)
-		pass
 
 func _physics_process(_delta: float) -> void:
 	var _vel: Vector3 = Vector3.ZERO	

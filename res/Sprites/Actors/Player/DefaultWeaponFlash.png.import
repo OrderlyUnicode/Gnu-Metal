@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DefaultWeaponFlash.png-928eb3c4bbef4411614e3d42d861c53e.stex"
+path="res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Sprites/Player/DefaultWeaponFlash.png"
-dest_files=[ "res://.import/DefaultWeaponFlash.png-928eb3c4bbef4411614e3d42d861c53e.stex" ]
+source_file="res://res/Sprites/Actors/Player/DefaultWeaponFlash.png"
+dest_files=[ "res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.stex" ]
 
 [params]
 
