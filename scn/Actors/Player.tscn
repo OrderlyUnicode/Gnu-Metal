@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://res/Sprites/Player/DefaultWeapon.png" type="Texture" id=2]
+[ext_resource path="res://res/Sprites/Player/DefaultWeaponFlash.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.4
@@ -28,3 +30,24 @@ texture = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4857, 0 )
 current = true
 fov = 90.0
+
+[node name="MuzzleLight" type="SpotLight" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+visible = false
+light_color = Color( 0.835294, 0.627451, 0.337255, 1 )
+light_energy = 4.0
+spot_range = 3.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="WeaponSprite" type="Sprite" parent="UI"]
+position = Vector2( 203, 176 )
+scale = Vector2( 1.5, 2 )
+texture = ExtResource( 2 )
+
+[node name="WeaponFlash" type="Sprite" parent="UI/WeaponSprite"]
+visible = false
+position = Vector2( 10.6667, -29.5 )
+z_index = -1
+texture = ExtResource( 3 )
