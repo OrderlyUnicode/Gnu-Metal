@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://res/ResFiles/default_env.tres" type="Environment" id=1]
 [ext_resource path="res://scn/Actors/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scn/Actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scn/map/Prop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scn/map/SolidProp.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PlaneMesh" id=1]
-size = Vector2( 10, 10 )
+size = Vector2( 20, 20 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.215686, 0.576471, 0.313726, 1 )
@@ -23,7 +24,7 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="TmpFloor"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
 collision_mask = 6
 
 [node name="CollisionShape" type="CollisionShape" parent="TmpFloor/StaticBody"]
@@ -44,5 +45,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73638, 0.906212, 3.5351 )
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.595, 1, -1.905 )
 
-[node name="Prop" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0 )
+[node name="Props" type="Spatial" parent="."]
+
+[node name="Prop" parent="Props" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+
+[node name="SolidProps" type="Spatial" parent="."]
+
+[node name="SolidProp" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50182, 1.03324, 3.1835 )

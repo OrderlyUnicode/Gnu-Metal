@@ -10,6 +10,7 @@ func _input(event: InputEvent) -> void:
 
 func pauseToggle() -> void:
 	visible = not visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) if visible == false else Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = not get_tree().paused
 
 
