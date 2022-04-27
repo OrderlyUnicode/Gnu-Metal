@@ -18,3 +18,7 @@ func _on_ResumeButton_pressed() -> void:
 
 func _on_QuitButton_pressed() -> void:
 	get_tree().change_scene("res://scn/UI/MainMenu.tscn")
+
+
+func _on_OptionsButton_pressed() -> void:
+	pass # Replace with function body.

@@ -16,34 +16,42 @@ margin_left = -41.0
 margin_right = 41.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 21.0
+margin_top = 15.0
 margin_right = 82.0
-margin_bottom = 35.0
+margin_bottom = 29.0
 size_flags_vertical = 6
 text = "Gnu-Metal"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 margin_left = 39.0
-margin_top = 61.0
+margin_top = 48.0
 margin_right = 42.0
-margin_bottom = 118.0
+margin_bottom = 93.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
 [node name="NewButton" type="Button" parent="VBoxContainer"]
-margin_top = 140.0
+margin_top = 122.0
 margin_right = 82.0
-margin_bottom = 160.0
-size_flags_vertical = 6
+margin_bottom = 142.0
+size_flags_vertical = 10
 text = "New Game"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 183.0
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+margin_top = 158.0
 margin_right = 82.0
-margin_bottom = 203.0
+margin_bottom = 178.0
+size_flags_vertical = 6
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 195.0
+margin_right = 82.0
+margin_bottom = 215.0
 size_flags_vertical = 2
 text = "Quit Game"
 
 [connection signal="pressed" from="VBoxContainer/NewButton" to="." method="_on_NewButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
