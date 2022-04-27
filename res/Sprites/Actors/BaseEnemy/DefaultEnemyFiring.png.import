@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FN-42.png-a84eb907dcb487c3a8e04906344ccc5f.stex"
+path="res://.import/DefaultEnemyFiring.png-de3913a8f4226315a1657c911dec11c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Sprites/Items/FN-42.png"
-dest_files=[ "res://.import/FN-42.png-a84eb907dcb487c3a8e04906344ccc5f.stex" ]
+source_file="res://res/Sprites/Actors/BaseEnemy/DefaultEnemyFiring.png"
+dest_files=[ "res://.import/DefaultEnemyFiring.png-de3913a8f4226315a1657c911dec11c9.stex" ]
 
 [params]
 
@@ -19,11 +19,11 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
