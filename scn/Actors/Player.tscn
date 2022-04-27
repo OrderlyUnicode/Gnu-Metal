@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://res/Sprites/Actors/Player/DefaultWeaponAlt.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://res/ResFiles/HumanoidCollision.tres" type="Shape" id=4]
 [ext_resource path="res://res/Sprites/Actors/Player/PistolWeaponAlt.png" type="Texture" id=5]
 [ext_resource path="res://scn/UI/PauseMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://res/ResFiles/default_env.tres" type="Environment" id=7]
 
 [sub_resource type="Gradient" id=2]
 
@@ -31,6 +32,7 @@ texture = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4857, 0 )
+environment = ExtResource( 7 )
 current = true
 fov = 90.0
 

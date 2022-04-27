@@ -7,19 +7,11 @@ export(int) var weapon = 1
 var _dir: Vector2
 var _sp: Vector3= Vector3(10.0,-1.0,10.0)
 var fireRate: float = 0.1
-var inMenu: bool = false
-
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)	
 
 func _input(event: InputEvent) -> void:
-	#simplistic code to make sure menus can be navigated on pause
-	if event.is_action_pressed("ui_cancel"):
-		inMenu = not inMenu
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) if inMenu == false else Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
 	if event.is_action_pressed("fire"):
 		_fire(weapon)
 		
@@ -52,9 +44,9 @@ func _physics_process(_delta: float) -> void:
 	
 	_vel += (global_transform.basis.x * _dir.x) * _sp.x
 	_vel += (global_transform.basis.z * _dir.y) * _sp.z
-
 	_vel = move_and_slide(_vel)
-	
+
+
 func _fire(weapon: int) -> void:
 	var weponSel: Node
 	if weapon == 1:

@@ -103,4 +103,4 @@ quality/filters/use_nearest_mipmap_filter=true
 quality/lightmapping/use_bicubic_sampling=false
 quality/subsurface_scattering/quality=0
 quality/depth/hdr=false
-environment/default_environment="res://res/default_env.tres"
+environment/default_environment="res://res/ResFiles/default_env.tres"
