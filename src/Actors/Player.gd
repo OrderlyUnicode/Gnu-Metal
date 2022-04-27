@@ -6,6 +6,7 @@ export(int) var weapon = 1
 #variables
 var _dir: Vector2
 var _sp: Vector3= Vector3(10.0,-1.0,10.0)
+var fireRate: float = 0.1
 var inMenu: bool = false
 
 
@@ -58,14 +59,15 @@ func _fire(weapon: int) -> void:
 	var weponSel: Node
 	if weapon == 1:
 		weponSel = $UI/RifleSprite/WeaponFlash
+		fireRate = 0.1
 	elif weapon == 2:
 		weponSel = $UI/PistolSprite/WeaponFlash
-	
+		fireRate = 0.25
 	
 	weponSel.visible = true
 	$Camera/MuzzleLight.visible = true
 	if $Camera/RayCast.is_colliding() and $Camera/RayCast.get_collider().get_collision_layer_bit(2):
 		$Camera/RayCast.get_collider().damage()
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(fireRate), "timeout")
 	weponSel.visible = false
 	$Camera/MuzzleLight.visible = false

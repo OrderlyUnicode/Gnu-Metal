@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://res/Sprites/Actors/Player/DefaultWeaponAlt.png" type="Texture" id=2]
 [ext_resource path="res://res/Sprites/Actors/Player/DefaultWeaponFlash.png" type="Texture" id=3]
 [ext_resource path="res://res/ResFiles/HumanoidCollision.tres" type="Shape" id=4]
 [ext_resource path="res://res/Sprites/Actors/Player/PistolWeaponAlt.png" type="Texture" id=5]
+[ext_resource path="res://scn/UI/PauseMenu.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Gradient" id=2]
 
@@ -56,7 +57,6 @@ debug_shape_custom_color = Color( 1, 1, 1, 1 )
 follow_viewport_enable = true
 
 [node name="RifleSprite" type="Sprite" parent="UI"]
-visible = false
 position = Vector2( 218, 200 )
 scale = Vector2( 3, 2 )
 texture = ExtResource( 2 )
@@ -69,6 +69,7 @@ z_index = -1
 texture = ExtResource( 3 )
 
 [node name="PistolSprite" type="Sprite" parent="UI"]
+visible = false
 position = Vector2( 230, 168 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 5 )
@@ -79,3 +80,6 @@ position = Vector2( 4, 8 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -1
 texture = ExtResource( 3 )
+
+[node name="PauseMenu" parent="UI" instance=ExtResource( 6 )]
+visible = false
