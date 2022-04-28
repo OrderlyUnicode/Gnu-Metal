@@ -3,6 +3,7 @@ export(Texture) onready var charSprite
 export(Shape) onready var charCollision
 export(float) onready var speed = 4
 
+var target: Node
 var _dir: Vector3 = Vector3.ZERO
 var _vel: Vector3 = Vector3.ZERO
 var _health: int = 6
@@ -14,20 +15,23 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if _health <= 0:
 		queue_free()
-	_dir = Vector3(1.0, 0, 1.0)
+	if target != null:
+		chase()
+	
 	_vel = (_dir * speed).normalized()
 	_vel = move_and_slide(_vel)
 
 func damage(damage: float) -> void:
 	_health -= damage
-	$CollisionShape/CharacterSprite.modulate += Color(1.0, 0.0, 0.0, 1.0)
+	$CollisionShape/CharacterSprite.modulate += Color(1.0, 0.0, 0.0)
 
 func patrol() -> void:
-	pass
+	_dir = Vector3(rand_range(-1.0, 1.0), 0.0, rand_range(-1.0, 1.0))
 
-func chase(player: Node) -> void:
-	self.look_at(player.global_transform, Vector3.UP)
-	
+func chase() -> void:
+	self.look_at(target.global_transform.origin, Vector3.UP)
+	_dir = (target.global_transform.origin - global_transform.origin).normalized()
+
 func fire() -> void:
 	$CollisionShape/CharacterSprite/MuzzleLight.visible = true
 	$CollisionShape/CharacterSprite/RayCast.enabled = true
@@ -38,8 +42,10 @@ func fire() -> void:
 	$CollisionShape/CharacterSprite/MuzzleLight.visible = false
 	$CollisionShape/CharacterSprite/RayCast.enabled = false
 
-
 func _on_FoV_body_entered(body: Node) -> void:
-	if body == KinematicBody:
-		chase(body)
-	pass # Replace with function body.
+	if body.get_collision_layer_bit(1):
+		target = body
+
+func _on_FoV_body_exited(body: Node) -> void:
+	target = null
+	patrol()

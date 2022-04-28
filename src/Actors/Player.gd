@@ -15,7 +15,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fire"):
 		_fire(weapon)
-		
+
 	if event.is_action_pressed("weapon_cycle"):
 		weapon +=1
 		if weapon > 2:
@@ -58,8 +58,7 @@ func _fire(weapon: int) -> void:
 		weponSel = $UI/PistolSprite/WeaponFlash
 		fireRate = 0.25
 		weaponDamage = 1.0
-		
-	
+
 	weponSel.visible = true
 	$Camera/MuzzleLight.visible = true
 	if $Camera/RayCast.is_colliding() and $Camera/RayCast.get_collider().get_collision_layer_bit(2):
@@ -67,6 +66,6 @@ func _fire(weapon: int) -> void:
 	yield(get_tree().create_timer(fireRate), "timeout")
 	weponSel.visible = false
 	$Camera/MuzzleLight.visible = false
-	
+
 func _damage() -> void:
 	pass

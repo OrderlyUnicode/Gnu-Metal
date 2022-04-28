@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://res/Sprites/Actors/BaseEnemy/DefaultEnemy.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=3]
 [ext_resource path="res://res/ResFiles/HumanoidCollision.tres" type="Shape" id=4]
-
-[sub_resource type="CylinderShape" id=1]
-radius = 5.0
-height = 1.0
 
 [node name="Enemy" type="KinematicBody"]
 collision_layer = 4
@@ -42,12 +38,15 @@ spot_angle = 30.0
 [node name="RayCast" type="RayCast" parent="CollisionShape/CharacterSprite"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.234819, -4.91328e-09, -0.112403 )
 cast_to = Vector3( 0, 0, -30 )
-collision_mask = 7
+collision_mask = 3
 
 [node name="FoV" type="Area" parent="CollisionShape/CharacterSprite"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.438114, -0.234656 )
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape" type="CollisionShape" parent="CollisionShape/CharacterSprite/FoV"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.7783e-08, -0.406828 )
-shape = SubResource( 1 )
+[node name="CollisionPolygon" type="CollisionPolygon" parent="CollisionShape/CharacterSprite/FoV"]
+polygon = PoolVector2Array( 0, 0, 8, 7, 8, -7 )
 
 [connection signal="body_entered" from="CollisionShape/CharacterSprite/FoV" to="." method="_on_FoV_body_entered"]
+[connection signal="body_exited" from="CollisionShape/CharacterSprite/FoV" to="." method="_on_FoV_body_exited"]
