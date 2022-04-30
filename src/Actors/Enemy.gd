@@ -43,11 +43,14 @@ func chase() -> void:
 
 
 func fire() -> void:
-	$CollisionShape/CharacterSprite/RayCast.translation = Vector3(rand_range(-0.35, 0.35), rand_range(-0.35, 0.35), 0)
+	$CollisionShape/CharacterSprite/RayCast.translation = Vector3(rand_range(-0.5, 0.5), rand_range(-0.35, 0.35), 0)
 	$CollisionShape/CharacterSprite/MuzzleLight.visible = true
+	$CollisionShape/CharacterSprite/MuzzleFlash.visible = true
+	if $CollisionShape/CharacterSprite/MuzzleLight.visible:
+		print("worked")
+	
 	if $CollisionShape/CharacterSprite/RayCast.is_colliding():
 		target.damage()
-	$CollisionShape/CharacterSprite/MuzzleLight.visible = false
 
 func _on_FoV_body_entered(body: Node) -> void:
 	if body.get_collision_layer_bit(1):
@@ -61,4 +64,7 @@ func _on_FoV_body_exited(body: Node) -> void:
 
 func _on_ShotTimer_timeout() -> void:
 	fire()
+	yield(get_tree().create_timer(0.2), "timeout")
+	$CollisionShape/CharacterSprite/MuzzleLight.visible = false
+	$CollisionShape/CharacterSprite/MuzzleFlash.visible = false
 	$ShotTimer.wait_time = rand_range(0.5, 2.0)

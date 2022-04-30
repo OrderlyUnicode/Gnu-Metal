@@ -1,33 +1,30 @@
 [gd_scene format=2]
 
-[node name="GameUI" type="Control"]
+[node name="GameUI" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 218.0
 margin_right = 426.0
 margin_bottom = 232.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="HealthLabel" type="Label" parent="HBoxContainer"]
 margin_right = 66.0
 margin_bottom = 14.0
 text = "Health: 69"
 
-[node name="AmmoLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="AmmoLabel" type="Label" parent="HBoxContainer"]
 margin_left = 358.0
 margin_right = 426.0
 margin_bottom = 14.0
 size_flags_horizontal = 10
 text = "Ammo 8/8"
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="."]
+show_behind_parent = true
 margin_top = 236.0
 margin_right = 426.0
 margin_bottom = 240.0

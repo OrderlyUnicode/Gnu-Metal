@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RifleAmmoBox.png-1259103c6e850baf5b5b2396ef843324.stex"
+path="res://.import/Fence-sheet.png-8f9480f3df6dc269216bb28ac7bbe770.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Sprites/Props/RifleAmmoBox.png"
-dest_files=[ "res://.import/RifleAmmoBox.png-1259103c6e850baf5b5b2396ef843324.stex" ]
+source_file="res://res/Sprites/Terrain/Fence-sheet.png"
+dest_files=[ "res://.import/Fence-sheet.png-8f9480f3df6dc269216bb28ac7bbe770.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

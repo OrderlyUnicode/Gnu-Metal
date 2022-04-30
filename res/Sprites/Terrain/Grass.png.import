@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.s3tc.stex"
-path.etc2="res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.etc2.stex"
+path.s3tc="res://.import/Grass.png-2b724e245fbcd2e53639f1b6c962e65b.s3tc.stex"
+path.etc2="res://.import/Grass.png-2b724e245fbcd2e53639f1b6c962e65b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://res/Sprites/Actors/Player/DefaultWeaponFlash.png"
-dest_files=[ "res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.s3tc.stex", "res://.import/DefaultWeaponFlash.png-10dc1e713c7a375163ccea7782d14eda.etc2.stex" ]
+source_file="res://res/Sprites/Terrain/Grass.png"
+dest_files=[ "res://.import/Grass.png-2b724e245fbcd2e53639f1b6c962e65b.s3tc.stex", "res://.import/Grass.png-2b724e245fbcd2e53639f1b6c962e65b.etc2.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
+flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1

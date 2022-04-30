@@ -1,34 +1,33 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://res/ResFiles/default_env.tres" type="Environment" id=1]
 [ext_resource path="res://scn/Actors/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scn/Actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scn/map/Prop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scn/map/SolidProp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://res/Sprites/Props/RifleAmmoBox.png" type="Texture" id=6]
+[ext_resource path="res://res/ResFiles/PropBox.tres" type="Shape" id=7]
+[ext_resource path="res://res/Meshes/Bounds.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://res/Meshes/Hut.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://src/Maps/Maine.gd" type="Script" id=10]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 20, 20 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.215686, 0.576471, 0.313726, 1 )
-metallic_specular = 0.2
-roughness = 0.75
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.5, 0.1, 0.5 )
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -2, 0.05, -2, 2, 0.05, -2, -2, 0.05, 2, -2, 0.05, 2, 2, 0.05, -2, 2, 0.05, 2, 2, 0.05, 2, 2, -0.05, 2, -2, 0.05, 2, -2, 0.05, 2, 2, -0.05, 2, -2, -0.05, 2, -2, 0.05, 2, -2, -0.05, 2, -2, 0.05, -2, -2, 0.05, -2, -2, -0.05, 2, -2, -0.05, -2, 2, -0.05, -2, -2, -0.05, -2, 2, -0.05, 2, 2, -0.05, 2, -2, -0.05, -2, -2, -0.05, 2, 2, 0.05, -2, 2, -0.05, -2, 2, 0.05, 2, 2, 0.05, 2, 2, -0.05, -2, 2, -0.05, 2, -2, 0.05, -2, -2, -0.05, -2, 2, 0.05, -2, 2, 0.05, -2, -2, -0.05, -2, 2, -0.05, -2, -2, 1.0502, -1.9, -2, 0.0502, -1.9, -2, 1.0502, -2, -2, 1.0502, -2, -2, 0.0502, -1.9, -2, 0.0502, -2, -2, 1.0502, -2, -2, 0.0502, -2, 2.02, 1.0502, -2, 2.02, 1.0502, -2, -2, 0.0502, -2, 2.02, 0.0502, -2, 2.02, 1.0502, -2, 2.02, 0.0502, -2, 2.02, 1.0502, -1.9, 2.02, 1.0502, -1.9, 2.02, 0.0502, -2, 2.02, 0.0502, -1.9, 2.02, 1.0502, -1.9, 2.02, 0.0502, -1.9, -2, 1.0502, -1.9, -2, 1.0502, -1.9, 2.02, 0.0502, -1.9, -2, 0.0502, -1.9, 2.02, 0.0502, -2, -2, 0.0502, -2, 2.02, 0.0502, -1.9, 2.02, 0.0502, -1.9, -2, 0.0502, -2, -2, 0.0502, -1.9, -2, 1.0502, -2, 2.02, 1.0502, -2, -2, 1.0502, -1.9, -2, 1.0502, -1.9, 2.02, 1.0502, -2, 2.02, 1.0502, -1.9, -2.0102, 1.0417, 2.0035, -2.0102, 0.0417, 2.0035, -2.0102, 1.0417, 1.9035, -2.0102, 1.0417, 1.9035, -2.0102, 0.0417, 2.0035, -2.0102, 0.0417, 1.9035, -2.0102, 1.0417, 1.9035, -2.0102, 0.0417, 1.9035, 2.0098, 1.0417, 1.9035, 2.0098, 1.0417, 1.9035, -2.0102, 0.0417, 1.9035, 2.0098, 0.0417, 1.9035, 2.0098, 1.0417, 1.9035, 2.0098, 0.0417, 1.9035, 2.0098, 1.0417, 2.0035, 2.0098, 1.0417, 2.0035, 2.0098, 0.0417, 1.9035, 2.0098, 0.0417, 2.0035, 2.0098, 1.0417, 2.0035, 2.0098, 0.0417, 2.0035, -2.0102, 1.0417, 2.0035, -2.0102, 1.0417, 2.0035, 2.0098, 0.0417, 2.0035, -2.0102, 0.0417, 2.0035, 2.0098, 0.0417, 1.9035, -2.0102, 0.0417, 1.9035, 2.0098, 0.0417, 2.0035, 2.0098, 0.0417, 2.0035, -2.0102, 0.0417, 1.9035, -2.0102, 0.0417, 2.0035, -2.0102, 1.0417, 1.9035, 2.0098, 1.0417, 1.9035, -2.0102, 1.0417, 2.0035, -2.0102, 1.0417, 2.0035, 2.0098, 1.0417, 1.9035, 2.0098, 1.0417, 2.0035, 2.009, 1.0493, 1.903, 2.009, 0.0493, 1.903, 1.909, 1.0493, 1.903, 1.909, 1.0493, 1.903, 2.009, 0.0493, 1.903, 1.909, 0.0493, 1.903, 1.909, 1.0493, 1.903, 1.909, 0.0493, 1.903, 1.909, 1.0493, -1.897, 1.909, 1.0493, -1.897, 1.909, 0.0493, 1.903, 1.909, 0.0493, -1.897, 1.909, 1.0493, -1.897, 1.909, 0.0493, -1.897, 2.009, 1.0493, -1.897, 2.009, 1.0493, -1.897, 1.909, 0.0493, -1.897, 2.009, 0.0493, -1.897, 2.009, 1.0493, -1.897, 2.009, 0.0493, -1.897, 2.009, 1.0493, 1.903, 2.009, 1.0493, 1.903, 2.009, 0.0493, -1.897, 2.009, 0.0493, 1.903, 1.909, 0.0493, -1.897, 1.909, 0.0493, 1.903, 2.009, 0.0493, -1.897, 2.009, 0.0493, -1.897, 1.909, 0.0493, 1.903, 2.009, 0.0493, 1.903, 1.909, 1.0493, 1.903, 1.909, 1.0493, -1.897, 2.009, 1.0493, 1.903, 2.009, 1.0493, 1.903, 1.909, 1.0493, -1.897, 2.009, 1.0493, -1.897, -1.901, 1.0493, 1.903, -1.901, 0.0493, 1.903, -2.001, 1.0493, 1.903, -2.001, 1.0493, 1.903, -1.901, 0.0493, 1.903, -2.001, 0.0493, 1.903, -2.001, 1.0493, 1.903, -2.001, 0.0493, 1.903, -2.001, 1.0493, -1.897, -2.001, 1.0493, -1.897, -2.001, 0.0493, 1.903, -2.001, 0.0493, -1.897, -2.001, 1.0493, -1.897, -2.001, 0.0493, -1.897, -1.901, 1.0493, -1.897, -1.901, 1.0493, -1.897, -2.001, 0.0493, -1.897, -1.901, 0.0493, -1.897, -1.901, 1.0493, -1.897, -1.901, 0.0493, -1.897, -1.901, 1.0493, 1.903, -1.901, 1.0493, 1.903, -1.901, 0.0493, -1.897, -1.901, 0.0493, 1.903, -2.001, 0.0493, -1.897, -2.001, 0.0493, 1.903, -1.901, 0.0493, -1.897, -1.901, 0.0493, -1.897, -2.001, 0.0493, 1.903, -1.901, 0.0493, 1.903, -2.001, 1.0493, 1.903, -2.001, 1.0493, -1.897, -1.901, 1.0493, 1.903, -1.901, 1.0493, 1.903, -2.001, 1.0493, -1.897, -1.901, 1.0493, -1.897 )
 
 [node name="Maine" type="Spatial"]
+script = ExtResource( 10 )
 
-[node name="TmpFloor" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+[node name="Terrain" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = ExtResource( 8 )
+material/0 = null
+material/1 = null
+material/2 = null
 
-[node name="StaticBody" type="StaticBody" parent="TmpFloor"]
-transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
-collision_mask = 6
+[node name="StaticBody" type="StaticBody" parent="Terrain"]
 
-[node name="CollisionShape" type="CollisionShape" parent="TmpFloor/StaticBody"]
-shape = SubResource( 2 )
+[node name="CollisionShape" type="CollisionShape" parent="Terrain/StaticBody"]
+shape = SubResource( 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
@@ -49,8 +48,43 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.595, 1, -1.905 )
 
 [node name="Prop" parent="Props" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+propTexture = ExtResource( 6 )
+propCollision = ExtResource( 7 )
+pickup = true
+propType = 2
 
 [node name="SolidProps" type="Spatial" parent="."]
 
 [node name="SolidProp" parent="SolidProps" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50182, 1.03324, 3.1835 )
+propMesh = ExtResource( 9 )
+
+[node name="SolidProp2" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50182, 1.03324, 11.5716 )
+propMesh = ExtResource( 9 )
+
+[node name="SolidProp3" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50182, 1.03324, -6.51869 )
+propMesh = ExtResource( 9 )
+
+[node name="SolidProp4" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.37351, 1.03324, -6.51869 )
+propMesh = ExtResource( 9 )
+
+[node name="SolidProp5" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.37351, 1.03324, 3.61571 )
+propMesh = ExtResource( 9 )
+
+[node name="SolidProp6" parent="SolidProps" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.37351, 1.03324, 11.3564 )
+propMesh = ExtResource( 9 )
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

@@ -2,6 +2,8 @@ extends Control
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	$VBoxContainer/ResolutionButton.add_item("2560x1440")
 	$VBoxContainer/ResolutionButton.add_item("1920x1080")
 	$VBoxContainer/ResolutionButton.add_item("1280x720")

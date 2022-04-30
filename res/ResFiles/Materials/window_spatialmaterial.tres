@@ -1,0 +1,10 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://res/Sprites/Props/Window.png" type="Texture" id=1]
+
+[resource]
+resource_name = "Window"
+params_grow = true
+params_grow_amount = 0.001
+albedo_texture = ExtResource( 1 )
+roughness = 0.2

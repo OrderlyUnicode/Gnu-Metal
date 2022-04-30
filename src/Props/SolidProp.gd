@@ -1,4 +1,8 @@
 extends StaticBody
 
+export(Mesh) var propMesh
+export(Shape) var propShape
+
 func _ready() -> void:
-	pass
+	propMesh = $MeshInstance.mesh
+	propShape = $CollisionShape.shape
